@@ -1,7 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Nav from '@/components/nav/nav'
 
-const inter = Inter({ subsets: ['latin'] })
+//const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className='bg-gradient-to-br from-bg-purple-light via-bg-purple-mid to-bg-purple-dark'>
+        <Nav></Nav>
+        {children}
+      </body>
     </html>
   )
 }
