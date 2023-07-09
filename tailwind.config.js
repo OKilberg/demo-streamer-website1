@@ -23,7 +23,9 @@ module.exports = {
         'bg-purple-mid': '#332E3C',
         'bg-purple-light': '#4D4360',
         'white': '#FBFBF2',
-        'gray': '#CFD2CD'
+        'gray': '#CFD2CD',
+        'purple': '#B86FFE',
+        'purple-mid': '#AC68EB'
       }
     },
   },

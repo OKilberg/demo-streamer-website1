@@ -1,32 +1,51 @@
 import Link from 'next/link'
 import React from 'react'
-import {FaTwitch, FaInstagram, FaTwitter, FaYoutube} from 'react-icons/fa'
+import { FaTwitch, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { BiDonateHeart} from 'react-icons/bi'
+import StandardButton from '../buttons/StandardButton'
+import NavBarItem from './NavBarItem'
 
-interface NavProps {}
+interface NavProps { }
 
 function Nav(props: NavProps) {
-    const {} = props
+    const { } = props
 
     return (
         <div className='relative'>
             <div className='absolute w-full h-[70px] z-10'>
                 <div className='w-full h-full grid grid-cols-12 px-10 text-gray'>
                     <div className='col-span-3 flex items-center font-headline font-semibold'>
-                        <Link href={'/'}>everhuntresstv</Link>
+                        <NavBarItem>
+                            <Link className='uppercase' href={'/'}>everhuntresstv</Link>
+                        </NavBarItem>
                     </div>
                     <div className='col-span-3 flex items-center gap-20 font-interactive'>
-                        <Link href={'/'}>Home</Link>
-                        <Link href={'/schedule'}>Schedule</Link>
-                        <Link href={'/biography'}>Biography</Link>
+                        <NavBarItem>
+                            <Link href={'/'}>Home</Link>
+                        </NavBarItem>
+                        <NavBarItem>
+                            <Link href={'/schedule'}>Schedule</Link>
+                        </NavBarItem>
+                        <NavBarItem>
+                            <Link href={'/biography'}>Biography</Link>
+                        </NavBarItem>
                     </div>
                     <div className='col-span-3 flex justify-end items-center gap-10 text-xl'>
-                        <a href={'https://www.twitch.tv/'}><FaTwitch/></a>
-                        <a href={'https://www.instagram.com/'}><FaInstagram/></a>
-                        <a href={'https://www.youtube.com/'}><FaYoutube/></a>
-                        <a href={'https://twitter.com/'}><FaTwitter/></a>
+                        <NavBarItem>
+                            <a href={'https://www.twitch.tv/'}><FaTwitch /></a>
+                        </NavBarItem>
+                        <NavBarItem>
+                            <a href={'https://www.instagram.com/'}><FaInstagram /></a>
+                        </NavBarItem>
+                        <NavBarItem>
+                            <a href={'https://www.youtube.com/'}><FaYoutube /></a>
+                        </NavBarItem>
+                        <NavBarItem>
+                            <a href={'https://twitter.com/'}><FaTwitter /></a>
+                        </NavBarItem>
                     </div>
                     <div className='col-span-3 flex justify-end items-center font-interactive'>
-                        <Link href={'/schedule'}>Donate</Link>
+                            <StandardButton prominent label='Donate' link='/schedule' icon={<BiDonateHeart className='text-xl'/>}/>
                     </div>
                 </div>
             </div>
