@@ -9,7 +9,7 @@ function Centerblock(props: CenterblockProps) {
 
     return (
         <div className='flex flex-row justify-center items-center'>
-            <Image className='opacity-10' src={backgroundImage ? backgroundImage : ""} alt="Background Image" layout="fill" />
+            <Image className='opacity-10' src={backgroundImage ? backgroundImage : ""} alt="Background Image" layout="fill" objectFit='cover'/>
         </div>
     )
 }
