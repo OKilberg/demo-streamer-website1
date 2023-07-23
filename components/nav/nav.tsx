@@ -1,14 +1,20 @@
+"use client"
+
 import Link from 'next/link'
 import React from 'react'
 import { FaTwitch, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { BiDonateHeart} from 'react-icons/bi'
 import StandardButton from '../buttons/StandardButton'
 import NavBarItem from './NavBarItem'
+import { usePathname } from 'next/navigation'
+
 
 interface NavProps { }
 
 function Nav(props: NavProps) {
     const { } = props
+
+    const currentRoute = usePathname();
 
     return (
         <div className='relative'>
@@ -20,13 +26,13 @@ function Nav(props: NavProps) {
                         </NavBarItem>
                     </div>
                     <div className='col-span-3 flex items-center gap-20 font-interactive'>
-                        <NavBarItem>
+                        <NavBarItem isActive={currentRoute === "/"}>
                             <Link href={'/'}>Home</Link>
                         </NavBarItem>
-                        <NavBarItem>
+                        <NavBarItem isActive={currentRoute === "/schedule"}>
                             <Link href={'/schedule'}>Schedule</Link>
                         </NavBarItem>
-                        <NavBarItem>
+                        <NavBarItem isActive={currentRoute === "/biography"}>
                             <Link href={'/biography'}>Biography</Link>
                         </NavBarItem>
                     </div>

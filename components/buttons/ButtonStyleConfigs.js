@@ -1,4 +1,4 @@
-const commonButtonStyle = 'rounded-full py-2 px-6 flex items-center gap-1.5 cursor-pointer text-white';
+const commonButtonStyle = 'rounded-full py-2 px-6 flex items-center gap-1.5 cursor-pointer text-white active:brightness-75';
 
 export const prominentButtonStyle = 'bg-purple ' + commonButtonStyle;
 

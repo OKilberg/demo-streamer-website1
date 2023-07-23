@@ -1,12 +1,17 @@
 import React, { ReactNode } from 'react'
 
-interface Props {children: ReactNode | ReactNode[]}
+interface Props {children: ReactNode | ReactNode[], isActive?: boolean}
 
 function NavBarItem(props: Props) {
-    const {children} = props
+    const {children, isActive} = props
+
+    const stateStyling = ()=>{
+        const commonStyling = ' active:brightness-75'
+        return isActive ? 'text-white'+commonStyling : 'hover:text-white transition-colors duration-200'+commonStyling
+    }
 
     return (
-        <div className='hover:text-white transition-colors duration-200'>
+        <div className={stateStyling()}>
             {children}
         </div>
     )
